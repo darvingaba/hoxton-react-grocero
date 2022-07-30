@@ -30,7 +30,7 @@ function App() {
   function increaseQuantity(item: Item) {
     let newItems = structuredClone(items);
     if(item.stock===0)return;
-    let itemCopy = newItems.find((i) => i.id === item.id);
+    let itemCopy = newItems.find((i: { id: number; }) => i.id === item.id);
     itemCopy.inCart++;
     itemCopy.stock --;
     setItems(newItems);
@@ -39,7 +39,7 @@ function App() {
   function decreaseQuantity(item: Item) {
     let newItems = structuredClone(items);
     if(item.inCart===0)return;
-    let itemCopy = newItems.find((i) => i.id === item.id);
+    let itemCopy = newItems.find((i: { id: number; }) => i.id === item.id);
     itemCopy.inCart--;
     itemCopy.stock ++;
     setItems(newItems);

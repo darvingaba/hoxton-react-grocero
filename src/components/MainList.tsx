@@ -1,6 +1,20 @@
 import { MainItem } from "./MainItem";
+type Item = {
+  id: number;
+  name: string;
+  price: number;
+  stock: number;
+  inCart: number;
+};
+type Props = {
+    cartItems: Item[];
+    totalPrice: number;
+    decreaseQuantity: Function;
+    increaseQuantity: Function;
+    getItemImagePath: Function;
+}
 
-export function MainList({cartItems, totalPrice, decreaseQuantity, increaseQuantity, getItemImagePath}) {
+export function MainList({cartItems, totalPrice, decreaseQuantity, increaseQuantity, getItemImagePath}: Props) {
     return (
       <main id="cart">
         <h2>Your Cart</h2>
