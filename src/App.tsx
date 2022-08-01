@@ -11,7 +11,7 @@ function App() {
   
   function getItemImagePath(item: Item) {
     let id = String(item.id).padStart(3, "0");
-    return `public/assets/icons/${id}-${item.name}.svg`;
+    return `/assets/icons/${id}-${item.name}.svg`;
   }
 
   
